@@ -6,3 +6,10 @@
 
 ### Random Quote Machine
 - quote.html
+
+
+
+### Resources
+- makerbook.net
+- fontawesome.com
+- getbootstrap.com
