@@ -1,0 +1,57 @@
+body {
+  padding-top: 40px;
+  font-family: "Source Code Pro", monospace;
+
+}
+
+h1, h2 {
+    font-family: "Special Elite";
+}
+.contact {
+    padding-top: 40px;
+}
+
+.intro {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  text-align: center;
+  color: black;
+  background-color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.intro .intro-body {
+  height: 300px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.intro .intro-body .brand-heading {
+  font-size: 40px;
+}
+.intro .intro-body .intro-text {
+  font-size: 18px;
+}
+.content-section {
+  padding-top: 100px;
+}
+footer {
+  padding: 50px 0;
+}
+footer p {
+  margin: 0;
+}
+.reverse {
+  width: 100%;
+  padding: 50px 25px 0 25px;
+  color: white;
+  //background: url(img/bg-intro.png) no-repeat center center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
