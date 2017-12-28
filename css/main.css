@@ -1,6 +1,5 @@
 body {
-    background-image: url(../img/dust_scratches.png);
-    background-repeat: repeat;
+    background-color: #b4ab96;
 }
 
 body, h1, h3, p {
@@ -23,5 +22,9 @@ hr {
     border: 1px dashed black;
     border-radius: 15px;
     padding: 10px;
+    margin-bottom: 15px;
+}
+
+.btn {
     margin-bottom: 15px;
 }

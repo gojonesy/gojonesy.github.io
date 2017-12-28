@@ -160,7 +160,7 @@ header.masthead {
       -moz-transition: all ease 0.5s;
       transition: all ease 0.5s;
       opacity: 0;
-      background-color: rgba(24, 188, 156, 0.9); }
+      background-color: rgba(47, 73, 67, 0.9); }
       .portfolio .portfolio-item .portfolio-item-caption:hover {
         opacity: 1; }
       .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
@@ -289,12 +289,12 @@ a {
 }
 
 .btn-outline-green {
-  background-color: #dad5cb;
-  color: #94989d;
+  background-color: #29303a;
+  color: #dad5cb;
 }
 .btn-outline-green:hover, .btn-outline-green:focus, .btn-outline-green:active {
   background-color: #94989d;
-  color: #dad5cb;
+  color: #2f4943;
 }
 
 .text-white {
@@ -308,3 +308,4 @@ a {
 .contact-link:hover, .contact-link:focus, .contact-link:active {
   color: #2f4943;
 }
+

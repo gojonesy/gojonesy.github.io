@@ -5,34 +5,45 @@
         <title>Random Quote Machine</title>
 
         <!-- CSS -->
-        <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="css/main.css">
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom fonts for this template -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Special+Elite" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/gojonesy_freelancer.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid offwhite text-center">
+            <h2 class="text-center text-uppercase text-secondary mb-0">Random Quote Machine</h2>
+            <hr class="star-dark mb-5">
             <div class="row">
-                <div class="col-xs-12">
-                    <h1>Random Quote Machine</h1>
-                    <h3>Warning: May Cause Inspiration</h3>
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-2">
+                <div class="col-md-6 offset-md-3">
                     <div class="quote-box">
-                        <p id="quote"></p>
-                        <p id="author"></p>
+                          <p id="quote"></p>
+                          <p id="author"></p>
+                      </div>
+                      <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#" class="btn btn-lg btn-default get-quote"><i class="fa fa-quote-left fa-fw"></i> Get Quote</a></li>
+                                <li class="list-inline-item"><a href="#" class="btn btn-lg btn-default share-quote"><i class="fa fa-twitter fa-fw"></i> Share Quote</a></li>
+                      </ul>
                     </div>
-                    <ul class="list-inline">
-                        <li><a href="#" class="btn btn-lg btn-default get-quote"><i class="fas fa-quote-left fa-fw"></i> Get Quote</a></li>
-                        <li><a href="#" class="btn btn-lg btn-default share-quote"><i class="fab fa-twitter fa-fw"></i> Share Quote</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+       
+
+         <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom scripts for this template -->
+        <script src="js/freelancer.min.js"></script>
         <script src="js/main.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     </body>
 </html>
