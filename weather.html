@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Local Weather</title>
+
+        <!-- CSS -->
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom fonts for this template -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Special+Elite" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/gojonesy_freelancer.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container-fluid offwhite text-center">
+            <h2 class="text-center text-uppercase text-secondary mb-0">The Weather Outside is <button class="btn btn-secondary" id="weatheris"></button></h2>
+            <hr class="star-dark mb-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="weather-box">
+                          <p id="city"></p>
+                          <p id="weather"></p>
+                          <div class="condition"></div>
+                      </div>
+                      <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#" class="btn btn-lg btn-default get-quote"><i class="fa fa-quote-left fa-fw"></i> Toggle Me</a></li>
+                                <li class="list-inline-item"><a href="#" class="btn btn-lg btn-default share-quote"><i class="fa fa-twitter fa-fw"></i> Share Quote</a></li>
+                      </ul>
+                    </div>
+            </div>
+        </div>
+        <div id="data">
+            <h4>You are here:</h4>
+        </div>
+
+         <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom scripts for this template -->
+        <!-- <script src="js/freelancer.min.js"></script> -->
+        <script src="js/weather.js"></script>
+
+    </body>
+</html>

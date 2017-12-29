@@ -28,3 +28,10 @@ hr {
 .btn {
     margin-bottom: 15px;
 }
+
+.weather-box {
+    border: 1px dashed black;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
