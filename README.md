@@ -6,6 +6,8 @@
 
 ### Random Quote Machine
 - quote.html
+- weather.html
+
 
 
 

@@ -21,6 +21,31 @@ $(document).ready(function() {
   }
   getLocation();
 
+
+  $('.get-quote').on('click', function(event) {
+        event.preventDefault();
+        console.log("Hello Toggle!");
+        // Convert the text in # weather from Celsius to Fahrenheit
+        var temp = $('#weather').text();
+        console.log(temp);
+        var tempArray = temp.split(' ');
+        if (tempArray[1] === "C") {
+            // We are at Celsius, Convert to Fahrenheit
+            var tempTemp = tempArray[0] * 9;
+            tempTemp /= 5;
+            tempTemp += 32;
+            console.log(tempTemp);
+            $('#weather').text(tempTemp + ' F');
+        } else {
+            // We are at Fahrenheit, convert to Celsius
+            var tempTemp = tempArray[0] -32;
+            tempTemp *= 5;
+            tempTemp /= 9;
+            console.log(tempTemp);
+            $('#weather').text(tempTemp + ' C');
+        }
+        //getNewQuote();
+    });
 });
 
 function getWeather(lat, lon) {
@@ -38,7 +63,7 @@ function getWeather(lat, lon) {
                 weather = result.main.temp;
                 backPic = result.weather[0].icon;
                 $('#city').text(city);
-                $('#weather').text(weather);
+                $('#weather').text(weather + ' C');
                 $('#condition').text(backPic);
                 $('.condition').html("<img src='" + backPic + "'>");
             }
