@@ -26,14 +26,23 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <div class="quote-box">
-                          <p id="quote"></p>
-                          <p id="author"></p>
+                          <form action="" class="wikiSearchForm">
+                            <input type="search" placeholder="Search Wikipedia..." class="wikiSearchInput" id="wikiSearchInput"><br>
+                        
                       </div>
                       <ul class="list-inline">
-                                <li class="list-inline-item"><a href="#" class="btn btn-lg btn-default get-quote"><i class="fa fa-quote-left fa-fw"></i> Get Quote</a></li>
-                                <li class="list-inline-item"><a href="#" class="btn btn-lg btn-default share-quote"><i class="fa fa-twitter fa-fw"></i> Share Quote</a></li>
+                                <li class="list-inline-item"><button class="btn btn-lg btn-default searchWiki"><i class="fa fa-search fa-fw"></i> Search</button></li>
+                                <li class="list-inline-item"><button class="btn btn-lg btn-default random"><i class="fa fa-random fa-fw"></i> Get Random</button></li>
                       </ul>
+                      </form>
                     </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="searchResults">
+
+                    </div>
+                </div>
             </div>
         </div>
        
@@ -42,7 +51,7 @@
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Custom scripts for this template -->
-        <script src="js/freelancer.min.js"></script>
+        <!--<script src="js/freelancer.min.js"></script>-->
         <script src="js/wiki.js"></script>
 
     </body>
