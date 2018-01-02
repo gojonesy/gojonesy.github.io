@@ -57,4 +57,10 @@ hr {
     padding-bottom: 5px;
 }
 
+.twitch-box {
+    border: 1px dashed #29303a;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
 
