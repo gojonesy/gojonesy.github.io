@@ -264,3 +264,354 @@ function convertToRoman(num) {
 }
 
 convertToRoman(36);
+
+
+function whatIsInAName(collection, source) {
+  var sourceKeys = Object.keys(source);
+
+  // Filter the collection
+  return collection.filter(function (obj) {
+    for (var i = 0; i < sourceKeys.length; i++) {
+        if (!obj.hasOwnProperty(sourceKeys[i]) || obj[sourceKeys[i]] !== source[sourceKeys[i]]) {
+            return false;
+        }
+    }
+    return true;
+  });
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 })
+
+
+function myReplace(str, before, after) {
+    if (before.charAt(0) == before.charAt(0).toUpperCase()) {
+        // Before is uppercase, make sure after is uppercase
+        afterArr = after.split('');
+        afterArr.splice(0,1, after.charAt(0).toUpperCase());
+        after = afterArr.join('');
+    }
+    var strArr = str.split(" ");
+    //console.log(strArr);
+
+    for (var i = 0; i < strArr.length; i++) {
+        if (strArr[i] == before) {
+            // Before term present. Replace with after term
+            console.log("Before present: " + strArr[i]);
+            strArr.splice(i, 1, after);
+        }
+    }
+
+    str = strArr.join(' ');
+    return str;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
+
+
+function translatePigLatin(str) {
+    // if first letter is a vowel, just append "ay"
+    // If the second letter is a vowel, move the first letter to the end and append ay
+    // Otherwise, move everything prior to the first vowel to the end, and then append ay
+    var vowels = ['a','e','i','o','u'];
+    var strArr = str.split('');
+    
+    // Find the index of the first vowel:
+    for (j = 0; j < strArr.length; j++) {
+        for (i = 0; i < vowels.length; i++) {
+            if (strArr[j] === vowels[i]) {
+                
+                // Get all letters prior to the vowel and remove them from the array
+                var counter = 0;
+                while (counter < strArr.indexOf(strArr[j])) {
+                    strArr.push(strArr[0]);
+                    strArr.splice(0,1);
+                    counter ++;
+                }
+                if (counter == 0) {
+                    strArr.push('way');
+                } else {
+                    strArr.push('ay');
+                }
+                
+                // Add "ay" to the end:
+                return strArr.join('');
+            }
+        }
+    }
+}
+
+translatePigLatin("california");
+
+
+function pairElement(str) {
+    var pairMap = {T:'A', A:'T', G:'C', C:'G'};
+    strArr = str.split('');
+
+    for (var i=0; i < strArr.length; i++) {
+        strArr[i]=[strArr[i], map[strArr[i]]];
+    }
+  return strArr;
+}
+
+pairElement("GCG");
+
+
+function fearNotLetter(str) {
+    for( i=0; i < str.length; i++) {
+        var code = str.charCodeAt(i);
+
+        if (code !== str.charCodeAt(0) + i) {
+            return String.fromCharCode(code-1);
+        }
+    } 
+    return undefined;
+}
+
+fearNotLetter("abce");
+
+
+function booWho(bool) {
+  // What is the new fad diet for ghost developers? The Boolean.
+  if(typeof(bool) == typeof(true)){
+    return true;
+  }
+  return false;
+}
+
+booWho(null);
+
+
+function uniteUnique(arr) {
+    var newArr = [];
+
+    // Loop through the args first. We accept any amount of args.
+    for(i = 0; i < arguments.length; i++) {
+
+        // Now loop through the first supplied arg, that should be an array
+        for(j = 0; j < arguments[i].length; j++) {
+
+            // Is the value in the new array already?
+            if (newArr.indexOf(arguments[i][j]) < 0) {
+                newArr.push(arguments[i][j]);
+            }
+        }
+    }
+    return newArr;
+}
+
+function convertHTML(str) {
+
+    str = str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,"&apos;");
+    return str;
+}
+
+convertHTML("Dolce & Gabbana");
+convertHTML("Hamburgers < Pizza < Tacos")
+convertHTML('Stuff in "quotation marks"')
+
+
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  var re = /\s+|_+/g;
+
+  str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+  return str.replace(re, '-').toLowerCase();
+  
+}
+
+spinalCase('This Is Spinal Tap');
+spinalCase("thisIsSpinalTap")
+spinalCase("AllThe-small Things")
+
+
+function sumFibs(num) {
+  var counter = 0;
+  var currentCount = 1;
+  var sum = 0; // The first two numbers are always 1 and 1.
+  while (currentCount <= num) {
+    if (currentCount % 2 !== 0) {
+        // Number is odd. Add it to the sum
+        sum+=currentCount;
+    }
+    currentCount += counter;
+    counter = currentCount - counter;
+  }
+  return sum;
+}
+
+sumFibs(1000);
+
+function sumPrimes(num) {
+    // Create a sieve of Eratoshtenes
+    var sieve = [], primes = []
+    for (i = 2; i <= num; i++) {
+        if (!sieve[i]) {
+            primes.push(i);
+            for (j = i << 1; j <= num; j +=i) {
+                sieve[j] = true;
+            }
+        }
+    }
+
+    // Sum the primes
+    var sum = 0;
+    for (p = 0; p < primes.length; p++) {
+        sum += primes[p];
+    }
+    return sum;
+}
+
+sumPrimes(10);
+sumPrimes(977);
+
+
+function smallestCommons(arr) {
+    var range = [];
+    for (i = Math.max(arr[0], arr[1]); i >= Math.min(arr[0], arr[1]); i--) {
+        range.push(i);
+    }  
+
+    var lcm = range[0];
+    for (i = 1; i < range.length; i++) {
+        var GCD = gcd(lcm, range[i]);
+        lcm = (lcm * range[i]) / GCD;
+    }
+    return lcm
+
+    function gcd(x, y) {
+        // Implements the Euclidean Algorithm
+        if (y === 0)
+            return x;
+        else
+            return gcd(y, x%y);
+    }
+}
+
+smallestCommons([1,5]);
+
+function findElement(arr, func) {
+  var num;
+  // This doesn't work. Have to iterate over the array and test every num. Then, only return the first one.
+  //num = arr.filter(func);
+  for(var i = 0; i < arr.length; i++) {
+    if (func(arr[i])) {
+        num = arr[i];
+        return num;
+    }
+    
+  }
+  return num;
+}
+
+findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });
+findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })
+findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })
+
+function dropElements(arr, func) {
+  // Drop them elements.
+  return arr.slice(arr.findIndex(func) >= 0 ? arr.findIndex(func): arr.length, arr.length);
+}
+dropElements([1, 2, 3, 4], function(n) {return n > 5;});
+dropElements([1, 2, 3], function(n) {return n < 3; });
+dropElements([0, 1, 0, 1], function(n) {return n === 1;});
+dropElements([1, 2, 3, 4], function(n) {return n > 5;});
+dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;});
+dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;});
+
+
+
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+  var flatArray = [];
+
+  var flat = function(arg) {
+    if (!Array.isArray(arg)) {
+        flatArray.push(arg);
+    } else {
+        for (var a in arg) {
+            flat(arg[a]);
+        }
+    }
+  }
+  arr.forEach(flat);
+  return flatArray;
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
+
+
+function binaryAgent(str) {
+    
+    var binArr = str.split(" ");
+    var binCode = [];
+
+    for (i = 0; i < binArr.length; i++) {
+        binCode.push(String.fromCharCode(parseInt(binArr[i], 2).toString(10)));
+    }
+    return binCode.join("");
+}
+
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+
+function truthCheck(collection, pre) {
+  // Is everyone being true?
+  var trueCount = 0;
+
+  for (var i in collection) {
+    if (collection[i].hasOwnProperty(pre) && Boolean(collection[i][pre])) {
+        trueCount++;
+    }
+  }
+  return counter == collection.length;
+}
+
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+
+
+function addTogether() {
+    var checkNum = function(num) {
+        if (typeof num !== 'number') {
+            return undefined;
+        } else {
+            return num;
+        }
+    };
+
+    if (arguments.length > 1) {
+        var a = checkNum(arguments[0]);
+        var b = checkNum(arguments[1]);
+        if (a === undefined || b === undefined) {
+            return undefined;
+        } else {
+            return a + b;
+        }
+    } else {
+        // Only one agrument passed. Return a function
+        var c = arguments[0];
+        if (checkNum(c)) {
+            return function(arg2) {
+                if (c === undefined || checkNum(arg2) === undefined) {
+                    return undefined;
+                } else {
+                    return c + arg2;
+                }
+            };
+        }
+    }
+}
+
+addTogether(2,3);
+
+function telephoneCheck(phoneNumber) {
+  var regExp = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
+  var phone = phoneNumber.match(regExp);
+  if (phone) {
+    alert('yes');
+    return true;
+  }
+  alert('no');
+  return false;
+}

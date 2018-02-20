@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NFL API Display</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script type="text/javascript" src="nflapi.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>API Display</h1>
+        </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Week Select</h3>
+            <select name="count" id="weekChange" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <h3>Player Display Count</h3>
+            <select name="count" id="countChange" class="form-control">
+                <option id="twentyCount">20</option>
+                <option id="fiftyCount">50</option>
+                <option id="hundredCount">100</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <h3>Sort Players</h3>
+            <select name="sort" id="sortChange" class="form-control">
+                <option>fanPtsAgainstOpponentRank</option>
+                <option>carries</option>
+                <option>touches</option>
+                <option>receptions</option>
+                <option>targets</option>
+                <option>receptionPercentage</option>
+                <option>redzoneTargets</option>
+                <option>redzoneTouches</option>
+                <option>redzoneG2g</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" style="margin-top:30px;">
+                <li role="presentation" class="active"><a href="#qb-tab" aria-controls="home" role="tab" data-toggle="tab">QB</a></li>
+                <li role="presentation"><a href="#rb-tab" aria-controls="profile" role="tab" data-toggle="tab">RB</a></li>
+                <li role="presentation"><a href="#wr-tab" aria-controls="messages" role="tab" data-toggle="tab">WR</a></li>
+                <li role="presentation"><a href="#te-tab" aria-controls="settings" role="tab" data-toggle="tab">TE</a></li>
+                <li role="presentation"><a href="#k-tab" aria-controls="settings" role="tab" data-toggle="tab">K</a></li>
+                <li role="presentation"><a href="#def-tab" aria-controls="settings" role="tab" data-toggle="tab">DEF</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="qb-tab">
+                    <table class="table" id="qb-bx">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Team</td>
+                                <td>Opponent</td>
+                                <td>position</td>
+                                <td>Points</td>
+                                <td>Opponent Rank</td>
+                                <td>Carries</td>
+                                <td>Touches</td>
+                                <td>Receptions</td>
+                                <td>Targets</td>
+                                <td>Reception Percentage</td>
+                                <td>Redzone Targets</td>
+                                <td>Redzone Touches</td>
+                                <td>RedzoneG2g</td>
+                                <td>status</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="rb-tab">
+                    <table id="rb-bx" class="table">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Team</td>
+                                <td>Opponent</td>
+                                <td>position</td>
+                                <td>Points</td>
+                                <td>Opponent Rank</td>
+                                <td>Carries</td>
+                                <td>Touches</td>
+                                <td>Receptions</td>
+                                <td>Targets</td>
+                                <td>Reception Percentage</td>
+                                <td>Redzone Targets</td>
+                                <td>Redzone Touches</td>
+                                <td>RedzoneG2g</td>
+                                <td>status</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="wr-tab">
+                    <table id="wr-bx" class="table">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Team</td>
+                                <td>Opponent</td>
+                                <td>position</td>
+                                <td>Points</td>
+                                <td>Opponent Rank</td>
+                                <td>Carries</td>
+                                <td>Touches</td>
+                                <td>Receptions</td>
+                                <td>Targets</td>
+                                <td>Reception Percentage</td>
+                                <td>Redzone Targets</td>
+                                <td>Redzone Touches</td>
+                                <td>RedzoneG2g</td>
+                                <td>status</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="te-tab">
+                    <table id="te-bx" class="table">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Team</td>
+                                <td>Opponent</td>
+                                <td>position</td>
+                                <td>Points</td>
+                                <td>Opponent Rank</td>
+                                <td>Carries</td>
+                                <td>Touches</td>
+                                <td>Receptions</td>
+                                <td>Targets</td>
+                                <td>Reception Percentage</td>
+                                <td>Redzone Targets</td>
+                                <td>Redzone Touches</td>
+                                <td>RedzoneG2g</td>
+                                <td>status</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="k-tab">
+                    <table id="k-bx" class="table">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Team</td>
+                                <td>Opponent</td>
+                                <td>position</td>
+                                <td>Points</td>
+                                <td>Opponent Rank</td>
+                                <td>Carries</td>
+                                <td>Touches</td>
+                                <td>Receptions</td>
+                                <td>Targets</td>
+                                <td>Reception Percentage</td>
+                                <td>Redzone Targets</td>
+                                <td>Redzone Touches</td>
+                                <td>RedzoneG2g</td>
+                                <td>status</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="def-tab">
+                    <table id="def-bx" class="table">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Team</td>
+                                <td>Opponent</td>
+                                <td>position</td>
+                                <td>Points</td>
+                                <td>Opponent Rank</td>
+                                <td>Carries</td>
+                                <td>Touches</td>
+                                <td>Receptions</td>
+                                <td>Targets</td>
+                                <td>Reception Percentage</td>
+                                <td>Redzone Targets</td>
+                                <td>Redzone Touches</td>
+                                <td>RedzoneG2g</td>
+                                <td>status</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
